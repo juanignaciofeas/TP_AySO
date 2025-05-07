@@ -1,0 +1,2 @@
+Usuario=juani
+model name	: AMD Ryzen 5 8645HS w/ Radeon 760M Graphics
