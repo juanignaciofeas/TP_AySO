@@ -1,0 +1,41 @@
+sudo apt update
+ssh-keygen
+cat ~/.ssh/id_ed25519.pub
+ssh -T git@github.com
+cd ~
+mkdir repogit
+cd repogit
+git clone git@github.com:<juanignaciofeas>/TP_AySO.git
+git clone git@github.com:juanignaciofeas/TP_AySO.git
+cd TP_AySO
+pwd
+cat /etc/os-release
+grep -i HOME_URL /etc/os-release
+whoami
+echo "Usuario=$(whoami)" > datos_usuario.txt
+grep "model name" /proc/cpuinfo | head -n1 >> datos_usuario.txt
+git add .
+git commit -m "ADD: agregado 1er ejercicio sobre datos_usuario.txt"
+git config --global user.email "juanignaciofeas@gmail.com"
+git config --global user.name "juanignaciofeas"
+git config --global --list
+git commit -m "ADD: agregado 1er ejercicio sobre datos_usuario.txt"
+git push
+grep "model name" /proc/cpuinfo | head -n1 >> datos_usuario.txt
+cat datos_usuario.txt
+echo "Usuario=$(whoami)" > datos_usuario.txt
+grep "model name" /proc/cpuinfo | head -n1 >> datos_usuario.txt
+cat datos_usuario.txt
+git add datos_usuario.txt
+git commit -m "feat: Corrigiendo información de CPU"
+git log --oneline
+cat << EOF >> README.md
+Alumno: Juan Ignacio Feas
+División: 315
+Turno: Noche
+EOF
+
+git add README.md datos_usuario.txt
+git commit -m "ADD: Añadiendo Readme y datos de usuario"
+git push
+history -a
